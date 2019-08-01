@@ -1,7 +1,7 @@
 {
   "name": "cplotter-validator",
   "version": "0.0.1",
-  "description": "Does several object validations, this was inspired by Laravel Validation",
+  "description": "Does several object validation. This was inspired by Laravel Validation",
   "main": "index.js",
   "dependencies": {
     "dotenv-safe": "~6.1.0",

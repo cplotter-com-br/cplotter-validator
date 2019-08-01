@@ -157,3 +157,12 @@ This property receive a array as value, this array have must respect the followi
 `[number,message]`
 - number - must be a integer value
 - message - is the message tha will added on return if the property value is not compatible with the role.
+
+---
+
+#Cplotter Team
+- Walnei Antunes - walnei.antunes@gmail.com
+- Willyan Antunes - willyan.dantunes@gmail.com
+- Wallace Antunes - wallace.dantunes@gmail.com
+
+http://cplotter.com.br
