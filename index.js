@@ -8,7 +8,7 @@ require('dotenv-safe').config();
 * @param {Object} obj
 */
 module.exports.validate=async (validationRoles,obj)=>{
-    const vl=validationRoles.roles
+    const vl=validationRoles
     const body=obj
     let retorno=[]
     for(let x=0;x<vl.length;x++){
