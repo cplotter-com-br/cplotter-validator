@@ -149,6 +149,7 @@ ex:
     ]
 This will generate a sql query like this:
 `select count(*) from users where mail="tagetObject.email" and id !=1`
+
 ### minLength[]
 This property is optional.
 Verify if length of value of property (seted in param property) contains the minimum of caracters according to the rule .
