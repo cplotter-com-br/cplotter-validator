@@ -155,5 +155,5 @@ This property is optional.
 Verify if length of value of property (seted in param property) contains the minimum of caracters according to the rule .
 This property receive a array as value, this array have must respect the following structure:
 `[number,message]`
-- type must be a integer value
-- message is the message tha will added on return if the property value is not compatible with the role.
+- number - must be a integer value
+- message - is the message tha will added on return if the property value is not compatible with the role.
