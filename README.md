@@ -4,11 +4,6 @@ Does several object validations. This was inspired by Laravel Validation
 
 ---
 
-**Table of Contents**
-
-[TOC]
-
----
 #Dependencies
 - dotenv-safe
 - email-validator
@@ -148,7 +143,7 @@ ex:
     	}
     ]
 This will generate a sql query like this:
-`select count(*) from users where mail="tagetObject.email" and id !=1`
+`select count(*) from users where mail="targetObject.email" and id !=1`
 
 ### minLength[]
 This property is optional.
