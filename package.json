@@ -1,0 +1,27 @@
+{
+  "name": "cplotter-validator",
+  "version": "0.0.1",
+  "description": "Does several object validations, this was inspired by Laravel Validation",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv-safe": "~6.1.0",
+    "email-validator": "~2.0.4",
+    "sequelize": "~5.10.3",
+    "validar-cpf": "~2.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cplotter-com-br/cplotter-validator.git"
+  },
+  "keywords": [
+    "validator",
+    "sequelize",
+    "cplotter"
+  ],
+  "author": "Cplotter Team",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/cplotter-com-br/cplotter-validator/issues"
+  },
+  "homepage": "https://github.com/cplotter-com-br/cplotter-validator#readme"
+}
