@@ -92,7 +92,11 @@ The cplotter-validation needs an array of object (validatorRoles), this objects 
     	required:["<command>","message"] // OPTIONAL
     	type:["<type>","message"]  // OPTIONAL
 		unique:["<table>:<optional_field>:<optional_value>","column","message"] // OPTIONAL
+		exists:["<table>","<column>","message"] //OPTIONAL
 		minLength:[number,"message"] // OPTIONAL
+		length:[number,"message"] // OPTIONAL
+		min:[number,"message"] // OPTIONAL
+		inList:[["opt","opt2",3],"message"] //OPTIONAL
     }
 ### validatorRoles object definition
 ####param:String
@@ -111,9 +115,14 @@ Verify if value of property (seted in param property) is compatible with role.
 This property receive a array as value, this array have must respect the following structure:
 `[type,message]`
 - type must be one of the these string:
-	- email - verify if value is a valid e-mail.
-	- cpf - verify if value is a brazilian CPF.
 	- boolean - verify if a value is a boolean.
+	- cep - verify if value is a brazilian CEP.
+	- cnpj - verify if value is a brazilian CNPJ.
+	- cpf - verify if value is a brazilian CPF.
+	- doc - verify if value is a brazilian CPF or CNPJ.
+	- email - verify if value is a valid e-mail.
+	- integer - verify if value is a integer.
+	- number - verify if value is a number.
 - message is the message tha will added on return if the property value is not compatible with type.
 
 ### unique[]
@@ -145,12 +154,44 @@ ex:
 This will generate a sql query like this:
 `select count(*) from users where mail="targetObject.email" and id !=1`
 
+###exists[]
+This property is optional.
+Verify in database if value of property (seted in param property) exists.
+This property receive a array as value, this array have must respect the following structure:
+`[tabe,table_column,message]`
+- table - set the table name for search
+- table_column - set column for search value
+- message is the message tha will added on return if the property value exists in database.
+
+### length[]
+This property is optional.
+Verify if length of value of property (seted in param property) contains the number of caracters according to the rule .
+This property receive a array as value, this array have must respect the following structure:
+`[number,message]`
+- number - must be a integer value
+- message - is the message tha will added on return if the property value is not compatible with the role.
 ### minLength[]
 This property is optional.
 Verify if length of value of property (seted in param property) contains the minimum of caracters according to the rule .
 This property receive a array as value, this array have must respect the following structure:
 `[number,message]`
 - number - must be a integer value
+- message - is the message tha will added on return if the property value is not compatible with the role.
+
+### min[]
+This property is optional.
+Verify if value of property (seted in param property) is less than or equal to role.
+This property receive a array as value, this array have must respect the following structure:
+`[number,message]`
+- number - must be a number value
+- message - is the message tha will added on return if the property value is not compatible with the role.
+
+### inList[]
+This property is optional.
+Verify if value of property (seted in param property) is in a list.
+This property receive a array as value, this array have must respect the following structure:
+`[[list],message]`
+- [list] - must be a array
 - message - is the message tha will added on return if the property value is not compatible with the role.
 
 ---

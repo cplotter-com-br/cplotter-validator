@@ -12,11 +12,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -type
     - integer
     - cep
+    - cnpj
+    - doc
+    - number
 - length
-- between
+- exists
+- inList
+- min
 
 ### Removed
--Dependences
+-Dependencies
     - email-validator
     - validar-cpf
 
