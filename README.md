@@ -6,9 +6,7 @@ Does several object validations. This was inspired by Laravel Validation
 
 #Dependencies
 - dotenv-safe
-- email-validator
 - sequelize
-- validar-cpf
 ---
 # Instalation
 `npm install cplotter-validator -s`
