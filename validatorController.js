@@ -1,7 +1,5 @@
-const express = require("express")
 const mailValidator = require("email-validator");
 const validarCpf = require('validar-cpf');
-const Request = require("request-promise-native");
 /**
 * @param {Array} validationRoles
 * @param {Object} obj

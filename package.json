@@ -1,9 +1,12 @@
 {
   "name": "cplotter-validator",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Does several object validation. This was inspired by Laravel Validation",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "email-validator": "^2.0.4",
+    "validar-cpf": "^2.1.2"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cplotter-com-br/cplotter-validator.git"
