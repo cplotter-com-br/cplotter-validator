@@ -1,5 +1,4 @@
 const express = require("express")
-const Sequelize=require("sequelize")
 const Request = require("request-promise-native");
 /**
 * @param {Array} validationRoles
@@ -21,10 +20,6 @@ module.exports.validate=async (validationRoles,obj)=>{
         valida=await typeValidation(vlg,body)
         if(valida)
             retorno.push(valida)
-        //UNIQUE
-        valida=await uniqueValidation(vlg,body)
-        if(valida)
-            retorno.push(valida)
         //MINLENGTH
         valida=minLengthValidation(vlg,body)
         if(valida)
@@ -39,10 +34,6 @@ module.exports.validate=async (validationRoles,obj)=>{
             retorno.push(valida)
         //inList
         valida=inListValidation(vlg,body)
-        if(valida)
-            retorno.push(valida)
-        //EXISTS
-        valida=await existsValidation(vlg,body)
         if(valida)
             retorno.push(valida)
     }

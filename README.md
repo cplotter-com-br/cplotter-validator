@@ -9,49 +9,13 @@ Does several object validations. This was inspired by Laravel Validation
 - sequelize
 ---
 # Instalation
-`npm install cplotter-validator -s`
----
-## Configure app
-### Configure dotenv-safe in your project
-Make the following files in the root folder of your project.
-- .env.example
-- .env
-
-copy this to the two files created:
-
-    USERDB=
-    PASSWORDDB=
-    DATABASE=
-    HOSTDB=
-    DIALECTDB=
-
-Fill the .env file with the following data:
-
-
-
-    USERDB= "database's user"
-    PASSWORDDB= "database user's password"
-    DATABASE= "database name"
-    HOSTDB= "adrress of database"
-    DIALICTDB= "mysql|mariadb|sqlite|postgres|mssql"
-
-
-### Configure sequelize in your project
-See more details about sequelize in:
-https://sequelize.org/master/manual/getting-started
-
-You can configure your sequelize to use the .env  variables, but is optional.
-
+`npm install cplotter-validator`
 ---
 # Use
 Add cplotter-validator dependence
 `const cplotterValidator=require("cplotter-validator)`
 
 Create a validation roles  like this:
-
-
-
-
     let validationRoles = [
     	{
     		param:"email",
@@ -60,11 +24,7 @@ Create a validation roles  like this:
     	}
     ]
 
-
 Call validation function
-
-
-
     let validationErrors = await cplotterValidator.validate(validationRoles, req.body);
     if(validationErrors){
     	console.log(validationErrors) //Validation failed return a messages in array
@@ -89,11 +49,12 @@ The cplotter-validation needs an array of object (validatorRoles), this objects 
     	param:"param_name", // REQUIRED
     	required:["<command>","message"] // OPTIONAL
     	type:["<type>","message"]  // OPTIONAL
-		unique:["<table>:<optional_field>:<optional_value>","column","message"] // OPTIONAL
-		exists:["<table>","<column>","message"] //OPTIONAL
-		minLength:[number,"message"] // OPTIONAL
 		length:[number,"message"] // OPTIONAL
+		minLength:[number,"message"] // OPTIONAL
+		maxLength:[number,"message"] // OPTIONAL
 		min:[number,"message"] // OPTIONAL
+		max:[number,"message"] // OPTIONAL
+		equal:[any,"message"] //OPTIONAL
 		inList:[["opt","opt2",3],"message"] //OPTIONAL
     }
 ### validatorRoles object definition
@@ -122,45 +83,6 @@ This property receive a array as value, this array have must respect the followi
 	- integer - verify if value is a integer.
 	- number - verify if value is a number.
 - message is the message tha will added on return if the property value is not compatible with type.
-
-### unique[]
-This property is optional.
-Verify in database if value of property (seted in param property) is unique.
-This property receive a array as value, this array have must respect the following structure:
-`[tabe,table_column,message]`
-- table - set the table name for search and a role to exclude register of search
-- table_column - set column for search value
-- message is the message tha will added on return if the property value exists in database.
-**Excluding registers from search**
-Sometimes it is necessary to exclude some records from the search to ensure perfect validation. When necessary, you can use a special string in the table parameter.
-
-`**"users: id:10"**`
-
-where:
-- users -  is name of table
-- id - is column of table
-- 10 - is value will be exclude of search
-
-ex:
-
-    [
-    	{
-    		param:"email"
-    		unique:["users: id:1","mail","E-mail alread exists."]
-    	}
-    ]
-This will generate a sql query like this:
-`select count(*) from users where mail="targetObject.email" and id !=1`
-
-###exists[]
-This property is optional.
-Verify in database if value of property (seted in param property) exists.
-This property receive a array as value, this array have must respect the following structure:
-`[tabe,table_column,message]`
-- table - set the table name for search
-- table_column - set column for search value
-- message is the message tha will added on return if the property value exists in database.
-
 ### length[]
 This property is optional.
 Verify if length of value of property (seted in param property) contains the number of caracters according to the rule .
@@ -175,10 +97,33 @@ This property receive a array as value, this array have must respect the followi
 `[number,message]`
 - number - must be a integer value
 - message - is the message tha will added on return if the property value is not compatible with the role.
+### maxLength[]
+This property is optional.
+Verify if length of value of property (seted in param property) contains the maximum of caracters according to the rule .
+This property receive a array as value, this array have must respect the following structure:
+`[number,message]`
+- number - must be a integer value
+- message - is the message tha will added on return if the property value is not compatible with the role.
 
 ### min[]
 This property is optional.
+Verify if value of property (seted in param property) is greater than or equal to role.
+This property receive a array as value, this array have must respect the following structure:
+`[number,message]`
+- number - must be a number value
+- message - is the message tha will added on return if the property value is not compatible with the role.
+
+### max[]
+This property is optional.
 Verify if value of property (seted in param property) is less than or equal to role.
+This property receive a array as value, this array have must respect the following structure:
+`[number,message]`
+- number - must be a number value
+- message - is the message tha will added on return if the property value is not compatible with the role.
+
+### equal[]
+This property is optional.
+Verify if value of property (seted in param property) is equal to role.
 This property receive a array as value, this array have must respect the following structure:
 `[number,message]`
 - number - must be a number value

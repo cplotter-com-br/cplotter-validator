@@ -1,19 +1,15 @@
 {
   "name": "cplotter-validator",
-  "version": "0.0.2",
+  "version": "2.0.0",
   "description": "Does several object validation. This was inspired by Laravel Validation",
   "main": "index.js",
-  "dependencies": {
-    "dotenv-safe": "~6.1.0",
-    "sequelize": "~5.10.3"
-  },
+  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cplotter-com-br/cplotter-validator.git"
   },
   "keywords": [
     "validator",
-    "sequelize",
     "cplotter"
   ],
   "author": "Cplotter Team",
