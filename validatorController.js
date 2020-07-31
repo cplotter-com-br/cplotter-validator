@@ -83,6 +83,11 @@ async function typeValidation(validationRole,body){
         case "integer":
             validado=Number.isInteger(body[validationRole.param])
             break
+        case "array":
+            if(!Array.isArray(body[validationRole.param])){
+                validado=false
+            }
+            break
         case "cep":
             if(body[validationRole.param].length!=9){
                 validado=false
