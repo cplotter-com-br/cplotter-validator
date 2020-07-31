@@ -1,5 +1,3 @@
-const express = require("express")
-const Request = require("request-promise-native");
 /**
 * @param {Array} validationRoles
 * @param {Object} obj
