@@ -2,12 +2,6 @@
 
 Does several object validations. This was inspired by Laravel Validation
 
----
-
-#Dependencies
-- dotenv-safe
-- sequelize
----
 # Instalation
 `npm install cplotter-validator`
 ---
