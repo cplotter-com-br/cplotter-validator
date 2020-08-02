@@ -75,6 +75,9 @@ async function typeValidation(validationRole,body){
                 validado=false
             }
             break
+        case "number":
+            validado=typeof body[validationRole.param] == "number"
+            break;
         case "integer":
             validado=Number.isInteger(body[validationRole.param])
             break

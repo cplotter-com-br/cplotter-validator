@@ -74,6 +74,7 @@ This property receive a array as value, this array have must respect the followi
 	- cpf - verify if value is a brazilian CPF.
 	- doc - verify if value is a brazilian CPF or CNPJ.
 	- email - verify if value is a valid e-mail.
+	- number - verify if value is a number.
 	- integer - verify if value is a integer.
 	- array - verify if value is a array.
 - message is the message tha will added on return if the property value is not compatible with type.
