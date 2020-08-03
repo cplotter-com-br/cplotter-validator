@@ -1,6 +1,6 @@
 {
   "name": "cplotter-validator",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "Does several object validation. This was inspired by Laravel Validation",
   "main": "index.js",
   "dependencies": {
@@ -13,7 +13,8 @@
   },
   "keywords": [
     "validator",
-    "cplotter"
+    "cplotter",
+    "laravel"
   ],
   "author": "Cplotter Team",
   "license": "SEE LICENSE IN LICENSE",

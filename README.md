@@ -10,6 +10,7 @@ Add cplotter-validator dependence
 `const cplotterValidator=require("cplotter-validator)`
 
 Create a validation roles  like this:
+
     let validationRoles = [
     	{
     		param:"email",
@@ -19,6 +20,7 @@ Create a validation roles  like this:
     ]
 
 Call validation function
+
     let validationErrors = await cplotterValidator.validate(validationRoles, req.body);
     if(validationErrors){
     	console.log(validationErrors) //Validation failed return a messages in array
@@ -51,6 +53,7 @@ The cplotter-validation needs an array of object (validatorRoles), this objects 
 		equal:[any,"message"] //OPTIONAL
 		inList:[["opt","opt2",3],"message"] //OPTIONAL
     }
+	
 ### validatorRoles object definition
 ####param:String
 Set the name of property will be validated on the target object, this property is required
