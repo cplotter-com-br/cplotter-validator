@@ -8,6 +8,7 @@ module.exports.validate=async (validationRoles,obj)=>{
     const vl=validationRoles
     const body=obj
     let retorno=[]
+    console.log("VALIDATE<<<<<<<<<<<<<<<<<<<<<<<<<<")
     for(let x=0;x<vl.length;x++){
         const vlg=vl[x];
         //REQUIRED
@@ -102,7 +103,6 @@ async function typeValidation(validationRole,body){
 }
 
 function minLengthValidation(validationRole,body){
-    console.log("======>>>>PASSOU<<<<========")
     if(!validationRole.minLength || !body[validationRole.param])
         return
     if(body[validationRole.param].length<validationRole.minLength[0])
